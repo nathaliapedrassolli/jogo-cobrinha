@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #101010;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+.game {
+  width: min(94vw, 650px);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: 32px;
+  letter-spacing: 5px;
+}
+
+.score {
+  text-align: right;
+}
+
+.score span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #888;
+}
+
+.score strong {
+  font-size: 28px;
+}
+
+.canvas-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 3px solid #292929;
+  background: #171717;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.5);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.game-over {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.85);
+  text-align: center;
+}
+
+.game-over.hidden {
+  display: none;
+}
+
+.game-over h2 {
+  font-size: 38px;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+
+.game-over p {
+  color: #aaa;
+  margin-bottom: 25px;
+}
+
+.game-over strong {
+  color: #fff;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+#restartButton {
+  padding: 14px 24px;
+  background: #fff;
+  color: #111;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+
+#restartButton:hover {
+  background: #ddd;
+  transform: translateY(-2px);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  margin-top: 22px;
+}
+
+.controls > div {
+  display: flex;
+  gap: 7px;
+}
+
+.control {
+  width: 58px;
+  height: 50px;
+  border-radius: 8px;
+  background: #242424;
+  color: #fff;
+  font-size: 20px;
+  transition: 0.1s;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.control:hover {
+  background: #333;
+}
+
+.control:active {
+  transform: scale(0.92);
+  background: #444;
+}
+
+.instruction {
+  margin-top: 18px;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .score strong {
+    font-size: 24px;
+  }
+
+  .control {
+    width: 54px;
+    height: 48px;
+  }
+
+  .game-over h2 {
+    font-size: 30px;
+  }
+}
